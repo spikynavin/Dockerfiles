@@ -13,6 +13,6 @@ jobs:
                                   password: ${{ secrets.MY_ACCESS }}
                         - name: Build the ubuntu-docker Docker image
                           run: |
-                                  docker build . --tag ghcr.io/spikynavin/ubuntu-16.04-docker-image:latest
-                                  docker run ghcr.io/spikynavin/ubuntu-16.04-docker-image:latest
-                                  docker push ghcr.io/spikynavin/ubuntu-16.04-docker-image:latest
+                                  docker build . --tag ghcr.io/spikynavin/ubuntu-18.04-docker-image:latest
+                                  docker run ghcr.io/spikynavin/ubuntu-18.04-docker-image:latest
+                                  docker push ghcr.io/spikynavin/ubuntu-18.04-docker-image:latest

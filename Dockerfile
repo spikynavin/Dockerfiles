@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -11,7 +11,7 @@ g++-multilib build-essential chrpath socat cpio rpm2cpio xz-utils debianutils ip
 libsdl1.2-dev lzop liblz4-tool libssl-dev lib32z1-dev libelf-dev xterm locales vim bash-completion screen \
 texlive-full libterm-readkey-perl intltool xalan software-properties-common openssl groff-base cmake gnupg \
 gnupg2 apt-utils sudo curl squashfs-tools gprbuild make xsltproc docbook-utils fop dblatex xmlto \
-realpath subversion cvs dos2unix net-tools iproute2 u-boot-tools bc
+subversion cvs dos2unix net-tools iproute2 u-boot-tools bc
 
 RUN apt-get update && apt-get install -y python python-pkg-resources python-msgpack python-setuptools
 
@@ -32,13 +32,9 @@ RUN python -m pip install --trusted-host pypi.python.org -r /requirements.txt
 RUN wget -qO - https://package.perforce.com/perforce.pubkey | apt-key add - \
 && apt update && apt install -y helix-cli
 
-RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip -P / \
-&& unzip -o /protoc-3.0.0-linux-x86_64.zip -d /usr/local bin/protoc && unzip -o /protoc-3.0.0-linux-x86_64.zip -d /usr/local 'include/*' \
-&& chmod +x /usr/local/bin/protoc
-
 RUN apt-get update && dpkg-reconfigure locales \
 && locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 ENV LANG en_US.utf8
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /requirements.txt /get-pip.py /protoc-3.0.0-linux-x86_64.zip
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /requirements.txt /get-pip.py
