@@ -2,7 +2,7 @@
 
 We are using docker container as a host env for yocto bulildsystem.
 
-At ubuntu-16.04 branch ubuntu-18.04 dockerfiles are available.
+At ubuntu-18.04 branch ubuntu-18.04 dockerfiles are available.
 
 The following packages are included in the image are.
 
