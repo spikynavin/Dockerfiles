@@ -1,10 +1,93 @@
-```Dockerfiles for ubuntu distro
+```Dockerfiles for ubuntu distro for yocto-buildsystem
 
-Dockerfiles available for build below list distro.
+We are using docker container as a host env for yocto bulildsystem.
 
-1. Ubuntu-16.04
-2. Ubuntu-18.04
-3. Ubuntu-20.04
+At master branch ubuntu-16.04 dockerfiles are available.
+
+The following packages are included in the image are.
+
+gawk \
+wget \
+git-core \
+diffstat \
+unzip \
+texinfo \
+gcc-multilib \
+g++-multilib \
+build-essential \
+chrpath \
+socat \
+cpio \
+rpm2cpio \
+xz-utils \
+debianutils \
+iputils-ping \
+libegl1-mesa \
+libsdl1.2-dev \
+lzop \
+liblz4-tool \
+libssl-dev \
+lib32z1-dev \
+libelf-dev \
+xterm \
+locales \
+vim \
+bash-completion \
+screen \
+texlive-full \
+libterm-readkey-perl \
+intltool \
+xalan \
+software-properties-common \
+openssl \
+groff-base \
+cmake \
+gnupg \
+gnupg2 \
+apt-utils \
+sudo \
+curl \
+squashfs-tools \
+gprbuild \
+make \
+xsltproc \
+docbook-utils \
+fop \
+dblatex \
+xmlto \
+realpath \
+subversion \
+cvs \
+dos2unix \
+net-tools \
+iproute2 \
+u-boot-tools \
+bc \
+protoc
+
+List of Python-Packages
+
+python \
+python-pkg-resources \
+python-msgpack \
+python-setuptools
+python3 \
+python3-pip \
+python3-pkg-resources \
+python3-pexpect \
+python3-git \
+python3-jinja2 \
+python3-msgpack \
+python3-setuptools
+
+Java support packages
+
+openjdk-8-jdk
+
+Perforce-client packages
+
+helix-cli
+_____________________________________________________________________________________________________________________________
 
 Command to build the distro from dockerfile.
 
@@ -33,4 +116,4 @@ docker run --rm \
                 -w $workdir \
                 -i $dockerimage
 
-Note: before execute the above cmd export the variables with proper values.```
+Note: before execute the above cmd export the variables with proper values```.
